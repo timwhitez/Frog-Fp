@@ -152,6 +152,8 @@ only_basic = True
 
 ## 指纹库check截图
 
+![image1](https://raw.githubusercontent.com/timwhitez/Frog-Fp/main/check.png)
+
 ## todo
 若有好的建议，程序的bug，欢迎提交issues
 
