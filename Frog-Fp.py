@@ -142,7 +142,7 @@ def run_root(url,type_F):
 				print("        "+yaml_name + ": "+url)
 				wFile(yaml_name + ": "+url)
 				if type_F == "first":
-					fileL.remove(url)
+					#fileL.remove(url)
 				if type_F == "second" and sec_flag == False:
 					sec_flag = True
 				return
@@ -159,7 +159,7 @@ def run_root(url,type_F):
 				print("        "+yaml_name + ": "+url)
 				wFile(yaml_name + ": "+url)
 				if type_F == "first":
-					fileL.remove(url)
+					#fileL.remove(url)
 				if type_F == "second" and sec_flag == False:
 					sec_flag = True
 				return
