@@ -35,3 +35,29 @@ input: url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->�
 web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[chaitin/rad](https://github.com/chaitin/rad), 目录fuzz使用[ffuf/ffuf](https://github.com/ffuf/ffuf)
 
 支持ip/domain/CIDR输入
+
+## about
+
+在大规模红蓝对抗中，不触发waf拦截的指纹识别是比较好的自动化切入点。
+
+尤其是在手上有了一部分0day后，深度的指纹识别框架能提升"以漏洞找资产的能力"。
+
+此框架的构思基于个人的一部分打点经验，有很多不足之处，开源是希望大家一起完善起来。
+
+对于我个人来说，我是不太想公开指纹库的，但是如果你能对本项目进行核心代码贡献/修复，或是可以贡献超过5个指纹yaml，即可共享目前我写的指纹库。
+
+## Usage
+若在linux下使用，请给 rad_linux/ffuf_linux/hb_linux三个文件可执行权限
+
+并且执行pip install安装依赖
+```
+python3 -m pip install requirements.txt
+
+```
+## 常用命令
+```
+python3 Frog-Fp.py win/linux -tL urls.txt
+
+python3 Frog-Fp.py win/linux -dL ips.txt
+```
+输入的文本按行划分，支持ip/domain/CIDR格式
