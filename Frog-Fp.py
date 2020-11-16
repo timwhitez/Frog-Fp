@@ -81,7 +81,7 @@ def run(url,yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5,
 	flag = 0
 	if yaml_name.split("-")[-1] != "md5":
 		for i in paths:
-			if (i == "/" or i == "") and headers == raw_headers and cookies == {} and Method == "get":
+			if (i == "/" or i == "") and HD == raw_headers and cookies == {} and Method == "get":
 				continue
 			else:
 				url_tar = url + i
