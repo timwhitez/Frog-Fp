@@ -150,12 +150,12 @@ only_basic = True
 
 ```
 
-## 指纹库check截图
-
-![image1](https://raw.githubusercontent.com/timwhitez/Frog-Fp/main/check.png)
-
 ## todo
 若有好的建议，程序的bug，欢迎提交issues
 
 ## 🚀Star Trend
 [![Stargazers over time](https://starchart.cc/timwhitez/Frog-Fp.svg)](https://starchart.cc/timwhitez/Frog-Fp)
+
+## 指纹库check截图
+
+![image1](https://raw.githubusercontent.com/timwhitez/Frog-Fp/main/check.png)
