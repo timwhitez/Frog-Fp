@@ -29,7 +29,7 @@ input: url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->�
 
 web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[chaitin/rad](https://github.com/chaitin/rad), 目录fuzz使用[ffuf/ffuf](https://github.com/ffuf/ffuf)
 
-注：c26root/hb 我略微修改了输出代码，仅输出结果，所以目前的hb二进制文件不可直接更新。
+注：c26root/hb 我略微修改了输出代码，所以目前的hb二进制文件不可直接更新。
 
 支持ip/domain/CIDR输入
 
