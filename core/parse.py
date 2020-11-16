@@ -27,6 +27,10 @@ def get_yaml(yaml_file):
 					c1 = q.split("=")[0]
 					c2 = q.split("=")[1]
 					cookies[c1] = c2
+			else:
+				c1 = raw_data['Cookie'].split("=")[0]
+				c2 = raw_data['Cookie'].split("=")[1]
+				cookies[c1] = c2
 
 
 		#处理Header
