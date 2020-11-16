@@ -29,6 +29,8 @@ input: url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->�
 
 web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[chaitin/rad](https://github.com/chaitin/rad), 目录fuzz使用[ffuf/ffuf](https://github.com/ffuf/ffuf)
 
+注：c26root/hb 我略微修改了输出代码，仅输出结果，所以目前的hb二进制文件不可直接更新。
+
 支持ip/domain/CIDR输入
 
 ## about
@@ -58,6 +60,10 @@ python3 Frog-Fp.py win/linux -tL urls.txt
 python3 Frog-Fp.py win/linux -dL ips.txt
 ```
 输入的文本按行划分，支持ip/domain/CIDR格式
+
+若识别出结果会存到fp_results.txt
+
+tmp/history内会储存爬虫所得目录的历史记录
 
 ## yaml格式解析
 
@@ -137,9 +143,17 @@ hb_time = 5
 hb_t = 200
 
 #端口扫描端口list
-ports = "80,81,443,444,8000,8080,8088,8880,8443,18080,18443"
+ports = "80,443,8080,8443"
 
 #仅基础扫描,此配置为True就不会进行爬虫与目录fuzz
 only_basic = True
 
 ```
+
+## 指纹库check截图
+
+## todo
+若有好的建议，程序的bug，欢迎提交issues
+
+## 🚀Star Trend
+[![Stargazers over time](https://starchart.cc/timwhitez/Frog-Fp.svg)](https://starchart.cc/timwhitez/Frog-Fp)
