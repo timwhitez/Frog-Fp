@@ -19,15 +19,15 @@ Frog-Fp批量深度指纹识别，采用python3实现，具体实现流程如下
 ```
 不开启深度扫描:
 
-domain/ip/cidr-->web端口发现-->浅层指纹识别
+input: domain/ip/cidr-->web端口发现-->浅层指纹识别
 
-url-->浅层指纹识别
+input: url-->浅层指纹识别
 
 开启深度扫描:
 
-domain/ip/cidr-->web端口发现-->浅层指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->深度指纹识别
+input: domain/ip/cidr-->web端口发现-->浅层指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->深度指纹识别
 
-url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->深度指纹识别
+input: url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->深度指纹识别
 
 ```
 指纹库采用yaml格式进行解析, 需自行添加, 支持get,post,md5三种方式进行识别, 指纹库不公开, 具体格式见demo
