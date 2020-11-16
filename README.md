@@ -32,6 +32,6 @@ input: url-->初次指纹识别-->爬虫 && dir fuzz-->目录过滤与去重-->�
 ```
 指纹库采用yaml格式进行解析, 需自行添加, 支持get,post,md5三种方式进行识别, 指纹库不公开, 具体格式见demo
 
-web端口发现使用[hb](https://github.com/c26root/hb), 爬虫使用[rad](https://github.com/chaitin/rad), 目录fuzz使用[ffuf](https://github.com/ffuf/ffuf)
+web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[chaitin/rad](https://github.com/chaitin/rad), 目录fuzz使用[ffuf/ffuf](https://github.com/ffuf/ffuf)
 
 支持ip/domain/CIDR输入
