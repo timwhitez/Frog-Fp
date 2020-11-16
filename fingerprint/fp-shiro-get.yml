@@ -1,0 +1,8 @@
+name: fp-shiro-get
+method: GET
+path: ["/"]
+Header: {"Accept-Language":"zh-CN", "Content-Type": "text/javascript"}
+Cookie: rememberMe=test
+follow_redirects: False
+expression: |
+      'deleteMe' in r.headers['Set-Cookie']

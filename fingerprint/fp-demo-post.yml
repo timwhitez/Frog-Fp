@@ -1,0 +1,9 @@
+name: fp-demo-post
+method: POST
+path: ["/","/login"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+data: "test=123"
+expression: |
+      r.status_code == 200 and ('test' in str(r.headers) or 'test1' in r.content.decode())
