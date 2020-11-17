@@ -81,30 +81,33 @@ def run(url,yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5,
 	flag = 0
 	if yaml_name.split("-")[-1] != "md5":
 		for i in paths:
-			if (i == "/" or i == "") and HD == raw_headers and cookies == {} and Method == "get":
-				continue
-			else:
-				url_tar = url + i
-				if Method == "get":
-					try:
-						r = requests.get(url_tar, headers=HD, cookies = cookies, timeout=config.timeout, verify=False, allow_redirects=fRe, proxies = config.proxies)
-						if eval(expression):
-							print("        "+yaml_name + ": "+url_tar)
-							wFile(yaml_name + ": "+url_tar)
-							flag = 1
-							break
-					except:
-						pass
-				elif Method == "post":
-					try:
-						r = requests.post(url_tar, headers=HD, cookies = cookies, data = datas, timeout=config.timeout, verify=False, allow_redirects=fRe, proxies = config.proxies)
-						if eval(expression):
-							print("        "+yaml_name + ": "+url_tar)
-							wFile(yaml_name + ": "+url_tar)
-							flag = 1
-							break
-					except:
-						pass
+			try:
+				if (i == "/" or i == "") and HD == raw_headers and cookies == {} and Method == "get":
+					pass
+				else:
+					url_tar = url + i
+					if Method == "get":
+						try:
+							r = requests.get(url_tar, headers=HD, cookies = cookies, timeout=config.timeout, verify=False, allow_redirects=fRe, proxies = config.proxies)
+							if eval(expression):
+								print("        "+yaml_name + ": "+url_tar)
+								wFile(yaml_name + ": "+url_tar)
+								flag = 1
+								break
+						except:
+							pass
+					elif Method == "post":
+						try:
+							r = requests.post(url_tar, headers=HD, cookies = cookies, data = datas, timeout=config.timeout, verify=False, allow_redirects=fRe, proxies = config.proxies)
+							if eval(expression):
+								print("        "+yaml_name + ": "+url_tar)
+								wFile(yaml_name + ": "+url_tar)
+								flag = 1
+								break
+						except:
+							pass
+			except Exception as e:
+				print(e)
 	elif yaml_name.split("-")[-1] == "md5":
 		for i in range(len(md5_path)):
 			url_tar = url + md5_path[i]
@@ -121,13 +124,14 @@ def run(url,yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5,
 					pass
 	if flag == 1 and type_F == "first":
 		fileL.remove(url)
-	elif flag == 1 and type_F == "second":
+	if flag == 1 and type_F == "second":
 		sec_flag = True
 
 #根目录指纹扫描
 def run_root(url,type_F):
 	global sec_flag
 	global fileL
+	global yaml_list
 	if type_F == "second" and sec_flag == True:
 		return
 	try:
@@ -141,8 +145,8 @@ def run_root(url,type_F):
 			if eval(expression):
 				print("        "+yaml_name + ": "+url)
 				wFile(yaml_name + ": "+url)
-				#if type_F == "first":
-					#fileL.remove(url)
+				if type_F == "first":
+					fileL.remove(url)
 				if type_F == "second" and sec_flag == False:
 					sec_flag = True
 				return
@@ -158,8 +162,8 @@ def run_root(url,type_F):
 			if eval(expression):
 				print("        "+yaml_name + ": "+url)
 				wFile(yaml_name + ": "+url)
-				#if type_F == "first":
-					#fileL.remove(url)
+				if type_F == "first":
+					fileL.remove(url)
 				if type_F == "second" and sec_flag == False:
 					sec_flag = True
 				return
@@ -203,6 +207,8 @@ if __name__ == '__main__':
 
 	#将初始url读入list
 	fileL = readf(file)
+	fileL_cp = []
+	fileL_cp.extend(fileL)
 
 	#判断是否仅进行基础扫描
 	if config.only_basic == True:
@@ -212,19 +218,20 @@ if __name__ == '__main__':
 	print("Basic scanning ",len(fileL),"urls...")
 
 	type_F = "first"
+
 	#针对根路径进行一次检测
 	with ThreadPoolExecutor(max_workers=config.threads) as pool:
-			all_task = [pool.submit(run_root,url,type_F) for url in fileL]
+			all_task = [pool.submit(run_root,url,type_F) for url in fileL_cp]
 			wait(all_task, return_when=ALL_COMPLETED)
 
 	#解析yaml文件
 	for y in yaml_list:
-		shuffle(fileL)
+		shuffle(fileL_cp)
 		#print("        ",y)
 		yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5 = parse.get_yaml("fingerprint/"+y)
 		#逐个url去请求
 		with ThreadPoolExecutor(max_workers=config.threads) as pool:
-			all_task = [pool.submit(run,url,yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5,type_F) for url in fileL]
+			all_task = [pool.submit(run,url,yaml_name,cookies,HD,fRe,paths,Method,expression,datas,md5_path,md5,type_F) for url in fileL_cp]
 			wait(all_task, return_when=ALL_COMPLETED)
 		#print("        Done\n")
 
