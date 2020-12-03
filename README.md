@@ -53,6 +53,10 @@ web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[c
 并且执行pip install安装依赖
 ```
 python3 -m pip install requirements.txt
+
+Linux下：
+python3 -m pip install requirements.txt
+python3 -m pip install PyYAML --ignore-installed PyYAML
 ```
 将指纹库yaml文件放入fingerprint文件夹内，执行check.py可进行yaml格式检查。
 
