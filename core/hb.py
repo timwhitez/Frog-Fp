@@ -10,7 +10,7 @@ def hb_scan(hb_bin,file):
 		os.remove("tmp/hb_output.txt")
 	except:
 		pass
-	cmd = ["./hb/"+hb_bin, "-f", file, "-o", "tmp/hb_output.txt", "-p", config.ports, "-random", "-redirect", "-timeout", str(config.hb_time), "-code", "200", "-t", str(config.hb_t)]
+	cmd = ["./hb/"+hb_bin, "-f", file, "-o", "tmp/hb_output.txt", "-p", config.ports, "-random", "-redirect", "-timeout", str(config.hb_time), "-t", str(config.hb_t)]
 	try:
 		print("Starting Port Scan")
 		rsp=subprocess.Popen(cmd)
