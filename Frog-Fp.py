@@ -243,15 +243,17 @@ if __name__ == '__main__':
 		exit()
 
 	print("Start Crawling&Deepscan ",len(fileL),"urls...")
-
+	
 	#爬虫,逐个url
 	crawler_res = []
 	crawlerL = []
 	for url in fileL:
-		crawlerL = rad.rad_crawler(rad_bin,url)
-		if crawlerL != []:
-			crawler_res.extend(crawlerL)
-			crawlerL.clear()
+		#判断是否深度扫描需要进行爬虫
+		if config.deep_crawl == True:
+			crawlerL = rad.rad_crawler(rad_bin,url)
+			if crawlerL != []:
+				crawler_res.extend(crawlerL)
+				crawlerL.clear()
 
 		#dirfuzz目录发现
 		fuzzL = ffuf.ffuf_dir(ffuf_bin,url)
