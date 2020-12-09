@@ -6,6 +6,7 @@ import sys
 import config
 
 def ffuf_dir(ffuf_bin,url):
+	print("fuzzing ",url)
 	li = []
 	cmd = ["./ffuf/"+ffuf_bin, "-u", url+"/FUZZ", "-timeout", str(config.fuzztime), "-ac", "-r", "-t", str(config.fuzz_t), "-s","-recursion","-recursion-depth", str(config.recursion), "-w", "ffuf/dict.txt", "-o", "tmp/fuzz_tmp.csv", "-of", "csv"]
 	try:
