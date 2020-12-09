@@ -155,7 +155,10 @@ ports = "80,443,8080,8443"
 #仅基础扫描,此配置为True就不会进行爬虫与目录fuzz
 only_basic = True
 
+#深度扫描进行爬虫
+deep_crawl = False
 ```
+目录扫描的字典位于ffuf/dict.txt，可自行修改
 
 ## todo
 若有好的建议，程序的bug，欢迎提交issues
