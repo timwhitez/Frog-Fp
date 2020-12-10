@@ -52,6 +52,9 @@ def get_yaml(yaml_file):
 		#处理path
 		if type(raw_data['path']) != list:
 			print(yaml_file,"path字段格式错误")
+		for i in raw_data['path']:
+			if "/" not in i:
+				print(yaml_file,"path字段格式错误")
 
 		#处理method
 		if raw_data['method'].lower() != "get" and raw_data['method'].lower() != "post":
