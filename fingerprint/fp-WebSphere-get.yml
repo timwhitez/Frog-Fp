@@ -1,0 +1,8 @@
+name: fp-WebSphere-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "IBM WebSphere" in str(r.headers)

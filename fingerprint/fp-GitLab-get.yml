@@ -1,0 +1,8 @@
+name: fp-GitLab-get
+method: GET
+path: ["/","/users/sign_in"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '_gitlab_session' in str(r.headers) and 'content="GitLab' in r.content.decode()

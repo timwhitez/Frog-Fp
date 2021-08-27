@@ -1,0 +1,8 @@
+name: fp-ecologyOA-get
+method: GET
+path: ['/login/Login.jsp','/login','/Login.jsp']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '/wui/theme/ecology' in r.content.decode() or 'commom_wev8' in r.content.decode() or 'ecology8/page/wui/' in r.content.decode() or 'ecology_JSessionId' in r.headers['Set-Cookie']

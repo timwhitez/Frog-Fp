@@ -1,0 +1,8 @@
+name: fp-74cms-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'content="74cms.com' in r.content.decode() or 'content="骑士CMS' in r.content.decode() or ('/templates/default/css/common.css' in r.content.decode() and 'selectjobscategory' in r.content.decode())

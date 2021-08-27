@@ -1,8 +1,8 @@
-name: fp-shiro-get
+name: fp-shiro1-get
 method: GET
 path: ["/","/login","/doLogin","/Login","/user/login"]
 Header: {"Accept-Language":"zh-CN"}
 Cookie: rememberMe=qwerty
-follow_redirects: True
+follow_redirects: False
 expression: |
       'deleteMe' in r.headers['Set-Cookie']

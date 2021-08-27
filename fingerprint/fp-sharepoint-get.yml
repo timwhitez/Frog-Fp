@@ -1,0 +1,8 @@
+name: fp-sharepoint-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'Microsoftsharepointteamservices' in str(r.headers)

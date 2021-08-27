@@ -1,0 +1,8 @@
+name: fp-SpringBoot-get
+method: GET
+path: ['/','/sbtest1qaz']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code == 404 and 'Whitelabel Error Page' in r.content.decode()

@@ -1,0 +1,8 @@
+name: fp-solr-get
+method: GET
+path: ["/solr/","/Solr/","/solr/index.html","/Solr/index.html"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Solr Admin</title>' in r.content.decode()

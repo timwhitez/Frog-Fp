@@ -1,0 +1,8 @@
+name: fp-weblogic-error-get
+method: GET
+path: ["/","/w3b1010gic"]
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      'From RFC 2068' in r.content.decode() and 'Hypertext Transfer Protocol' in r.content.decode()

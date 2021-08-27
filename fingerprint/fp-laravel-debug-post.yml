@@ -1,0 +1,8 @@
+name: fp-laravel-debug-post
+method: POST
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code==405 and 'MethodNotAllowedHttpException' in r.content.decode() and 'Environment &amp; details' in r.content.decode()

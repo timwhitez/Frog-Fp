@@ -1,0 +1,8 @@
+name: fp-H3C_switch-get
+method: GET
+path: ["/","/web/device/login"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Web user login</title>' in r.content.decode() and '/skin/custom/login/index.css' in r.content.decode()

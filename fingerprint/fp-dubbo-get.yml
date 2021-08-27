@@ -1,0 +1,8 @@
+name: fp-dubbo-get
+method: GET
+path: ["/","/index.html","/applications.html","/log.html"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Dubbo</title>' in r.content.decode() or ('Jetty' in str(r.headers) and 'dubbo' in r.content.decode())

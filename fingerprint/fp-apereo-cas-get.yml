@@ -1,0 +1,8 @@
+name: fp-apereo-cas-get
+method: GET
+path: ['/','/cas/login']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<a id="logo" href="http://www.apereo.org" title="go to Apereo home page">Apereo</a>' in r.content.decode() and '<h1>Central Authentication Service (CAS)</h1>' in r.content.decode() and 'Apereo, Inc' in r.content.decode()

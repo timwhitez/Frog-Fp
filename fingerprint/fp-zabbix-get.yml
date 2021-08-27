@@ -1,0 +1,8 @@
+name: fp-zabbix-get
+method: GET
+path: ['/','/login',"/zabbix"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'images/general/zabbix.ico' in r.content.decode() or 'zbx_sessionid' in str(r.headers) or 'Zabbix SIA' in r.content.decode()

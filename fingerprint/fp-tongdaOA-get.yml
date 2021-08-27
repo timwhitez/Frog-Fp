@@ -1,0 +1,8 @@
+name: fp-tongdaOA-get
+method: GET
+path: ["/","/index.php"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'tongda.ico' in r.content.decode() or 'http://www.tongda2000.com' in r.content.decode()

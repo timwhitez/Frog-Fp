@@ -1,0 +1,8 @@
+name: fp-NC-get
+method: GET
+path: ["/","/login.jsp","/index.jsp"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code==200 and '<title>YONYOU NC</title>' in r.content.decode()

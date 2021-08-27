@@ -1,0 +1,8 @@
+name: fp-Sangfor-VPN-get
+method: GET
+path: ["/","/por/login_auth.csp","/login_auth.csp","/por","/login_psw.csp"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'TWFID' in str(r.headers)

@@ -1,0 +1,8 @@
+name: fp-Liferay-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'Liferay-Portal' in str(r.headers) or 'Liferay Portal' in str(r.headers)

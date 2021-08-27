@@ -1,0 +1,8 @@
+name: fp-Nexus-get
+method: GET
+path: ["/","/nexus"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'Nexus Repository Manager</title>' in r.content.decode() or 'Sonatype Nexus Repository Manager</label>' in r.content.decode() or 'content="Nexus Repository Manager">' in r.content.decode()

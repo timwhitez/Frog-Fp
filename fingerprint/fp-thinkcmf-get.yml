@@ -1,0 +1,8 @@
+name: fp-thinkcmf-get
+method: GET
+path: ["/","/user/login/index.html"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'content="ThinkCMF' in r.content.decode() or 'ThinkCMF' in str(r.headers)

@@ -1,0 +1,8 @@
+name: fp-Weblogic-console-get
+method: GET
+path: ['/console/login/LoginForm.jsp','/console/login','/console','/login/LoginForm.jsp','/LoginForm.jsp']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code==200 and ('WebLogic Server' in r.content.decode() or 'console/login/bea_logo.gif' in r.content.decode())

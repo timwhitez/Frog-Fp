@@ -1,0 +1,8 @@
+name: fp-E-mobile-get
+method: GET
+path: ["/","/login.do"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'Weaver E-mobile' in r.content.decode()

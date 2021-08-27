@@ -1,0 +1,8 @@
+name: fp-axis2-get
+method: GET
+path: ['/axis2/index.html','/axis2/axis2-admin/index.html','/axis2-admin/index.html']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      'axis-style.css' in r.content.decode()

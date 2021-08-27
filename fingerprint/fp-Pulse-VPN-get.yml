@@ -1,0 +1,8 @@
+name: fp-Pulse-VPN-get
+method: GET
+path: ["/","/dana-na/auth/url_default/welcome.cgi"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Pulse Connect Secure</title>' in r.content.decode() and '<input' in text.split('type="password"')[0] and ('user' in r.content.decode().lower() or 'id' in r.content.decode().lower())

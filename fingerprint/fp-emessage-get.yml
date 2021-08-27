@@ -1,0 +1,8 @@
+name: fp-emessage-get
+method: GET
+path: ["/","/login.jsp"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>emessage' in r.content.decode() or 'emessage, 版本:' in r.content.decode()

@@ -1,0 +1,8 @@
+name: fp-GRP-U8-get
+method: GET
+path: ["/","/login.jsp","/index.jsp"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code==200 and 'GRP-U8' in r.content.decode()

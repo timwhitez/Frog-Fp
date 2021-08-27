@@ -1,0 +1,8 @@
+name: fp-laravel-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'laravel_session=' in r.headers['Set-Cookie']

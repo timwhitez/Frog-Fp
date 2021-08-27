@@ -1,0 +1,8 @@
+name: fp-jenkins-get
+method: GET
+path: ['/','/login']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "X-Jenkins" in str(r.headers)

@@ -1,0 +1,8 @@
+name: fp-Druid-get
+method: GET
+path: ["/druid/index.html"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'Druid Stat Index' in r.content.decode() and 'DruidVersion' in r.content.decode() and 'DruidDrivers' in r.content.decode()

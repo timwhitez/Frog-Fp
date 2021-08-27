@@ -1,0 +1,8 @@
+name: fp-vmware-vcenter-get
+method: GET
+path: ['/','/login.jsp']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>VMware Appliance Management</title>' in r.content.decode() or '<span>VMware' in r.content.decode()

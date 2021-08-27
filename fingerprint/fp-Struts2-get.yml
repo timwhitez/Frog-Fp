@@ -1,0 +1,8 @@
+name: fp-Struts2-get
+method: GET
+path: ["/?actionErrors=2077","/ch3ck2077.action","/ch3ck2077.do","/system/index!ch3ck.action","/system/index!ch3ck.do"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code == 500 and ('Struts Problem Report' in r.content.decode() or 'org.apache.struts2' in r.content.decode() or 'struts.devMode' in r.content.decode() or 'struts-tags' in r.content.decode() or 'There is no Action mapped for namespace' in r.content.decode())

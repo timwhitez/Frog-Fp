@@ -1,0 +1,8 @@
+name: fp-Coremail-get
+method: GET
+path: ["/","/coremail"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '/coremail/common' in r.content.decode()

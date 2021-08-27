@@ -1,0 +1,8 @@
+name: fp-Cacti-get
+method: GET
+path: ["/"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<img src="/images/auth_login.gif" border="0" alt="">' in r.content.decode() and '<body bgcolor="#FFFFFF" onload="document.login.login_username.focus()">' in r.content.decode() and 'Cacti' in r.content.decode()

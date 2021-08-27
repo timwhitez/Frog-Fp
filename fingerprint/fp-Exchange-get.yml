@@ -1,0 +1,8 @@
+name: fp-Exchange-get
+method: GET
+path: ["/owa","/owa/auth/logon.aspx"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Outlook' in r.content.decode() or 'owaLgnBdy' in r.content.decode() or '<!-- OwaPage = ASP.auth_logon_aspx -->' in r.content.decode() or 'owaauth.dll' in r.content.decode() or 'owaLogoContainer' in r.content.decode() or 'OutlookSession' in str(r.headers)

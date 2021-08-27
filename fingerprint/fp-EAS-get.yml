@@ -1,0 +1,8 @@
+name: fp-EAS-get
+method: GET
+path: ["/"]
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      'EASSESSIONID' in str(r.headers['Set-Cookie'])

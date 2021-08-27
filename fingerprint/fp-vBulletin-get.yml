@@ -1,0 +1,8 @@
+name: fp-vBulletin-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "Powered by vBulletin" in r.content.decode() or "bblastactivity" in str(r.headers) or "bbsessionhash" in str(r.headers) or "bblastvisit" in str(r.headers)

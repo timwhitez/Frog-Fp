@@ -1,0 +1,8 @@
+name: fp-adminer-get
+method: GET
+path: ['/','/adminer','/adminer.php','/adminer-4.7.8.php','/adminer-4.7.8-mysql.php','/compile.php','/lang.php']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'https://www.adminer.org/#download' in r.content.decode()

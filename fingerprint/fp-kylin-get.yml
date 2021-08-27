@@ -1,0 +1,8 @@
+name: fp-kylin-get
+method: GET
+path: ['/','/kylin','/kylin/login']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<small> Kylin</small>' in r.content.decode() and '<title>Kylin</title>' in r.content.decode()

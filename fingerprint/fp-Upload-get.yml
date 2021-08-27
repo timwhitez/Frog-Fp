@@ -1,0 +1,8 @@
+name: fp-Upload-get
+method: GET
+path: ["/","/upload","/uploads","/uploadfile","/uploadfiles","/images"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<input type="file"' in r.content.decode() and 'upload' in r.content.decode().lower()

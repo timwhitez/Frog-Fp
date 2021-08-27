@@ -1,0 +1,8 @@
+name: fp-JumpServer-get
+method: GET
+path: ['/','/core/auth/login/']
+Header: ''
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>JumpServer</title>' in r.content.decode() or ('/static/css/jumpserver.css' in r.content.decode() and '/static/js/jumpserver.js' in r.content.decode())

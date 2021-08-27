@@ -1,0 +1,8 @@
+name: fp-seeyonOA-get
+method: GET
+path: ['/seeyon/index.jsp','/seeyon','/index.jsp']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '/seeyon/common/images/A8/favicon.ico' in r.content.decode() or '/seeyon/main/common' in r.content.decode()

@@ -1,0 +1,3 @@
+name: fp-wordpress-md5
+md5_path: ["/wp-admin/images/wp-logo-2x.png","/wp-content/themes/twentyten/images/WordPress.png","/wp-includes/js/jcrop/Jcrop.gif","/xmlrpc.php","/wp-admin/css/login.min.css","/wp-admin/images/WordPress-logo.png","/wp-admin/images/w-logo-blue.png","/wp-admin/js/media-upload.dev.js","/wp-includes/css/buttons.min.css","/wp-includes/js/jquery/jquery.js"]
+md5: ["18ac0a741a252d0b2d22082d1f02002a","cc452c1368589d88d26f306c49319340","5a8bfd37651305bdafbcf2cd51b0254b","9ba4b71a75f877bef76ec6bb31f71df2","5986a1680538ac8e83d217027d57543f","c6b0f979b9e66fc338f4cb3853a5608a","7c129101ccaa73c604221737ce8380f1","2a55cde57cdb0c810aec27fdc928e1ef","74ac6750d8faed75774166c72f88fcbf","8610f03fe77640dee8c4cc924e060f12"]

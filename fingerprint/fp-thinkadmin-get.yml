@@ -1,0 +1,8 @@
+name: fp-thinkadmin-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'sc09d42f1' in str(r.headers) or 'think_lang' in str(r.headers) or 's041e359f' in str(r.headers) or 'thinkadmin.top' in r.content.decode()

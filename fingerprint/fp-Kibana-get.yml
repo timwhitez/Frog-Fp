@@ -1,0 +1,8 @@
+name: fp-Kibana-get
+method: GET
+path: ['/','/app/kibana']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Kibana</title>' in r.content.decode() or ('kbn-name' in str(r.headers) and 'kbn-version' in str(r.headers))

@@ -1,0 +1,8 @@
+name: fp-joomla-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "/media/system/js/core.js" in r.content.decode() and "/media/system/js/mootools-core.js" in r.content.decode()

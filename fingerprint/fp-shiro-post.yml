@@ -1,5 +1,5 @@
-name: fp-shiro-get
-method: GET
+name: fp-shiro-post
+method: POST
 path: ["/","/login","/doLogin","/Login","/user/login"]
 Header: {"Accept-Language":"zh-CN"}
 Cookie: rememberMe=qwerty

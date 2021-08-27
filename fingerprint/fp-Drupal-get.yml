@@ -1,0 +1,8 @@
+name: fp-Drupal-get
+method: GET
+path: ["/"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      ('X-Generator'in str(r.headers) and 'Drupal' in str(r.headers)) or 'jQuery.extend(Drupal.settings' in r.content.decode() or ('/sites/default/files/' in r.content.decode() and '/sites/all/modules/' in r.content.decode() and '/sites/all/themes/' in r.content.decode())

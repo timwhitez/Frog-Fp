@@ -1,0 +1,8 @@
+name: fp-Login-get
+method: GET
+path: ["/","/login","/admin","/logon","/Login"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      ('type="password"' in r.content.decode() or 'name="password"' in r.content.decode()) and ('name="user' in r.content.decode() or 'id="user' in r.content.decode() or 'name="userId' in r.content.decode())

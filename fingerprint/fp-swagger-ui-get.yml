@@ -1,0 +1,8 @@
+name: fp-swagger-ui-get
+method: GET
+path: ['/','/swagger-ui.html','/v2/api-docs','/api-doc']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      'swagger-ui/css' in r.content.decode() or '{"swagger":"2.0",' in r.content.decode()

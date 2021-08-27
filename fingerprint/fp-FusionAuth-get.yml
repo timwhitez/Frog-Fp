@@ -1,0 +1,8 @@
+name: fp-FusionAuth-get
+method: GET
+path: ["/","/login"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'content="FusionAuth">' in r.content.decode() or 'fusionauth.locale' in str(r.headers)

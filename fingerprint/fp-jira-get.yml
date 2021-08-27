@@ -1,0 +1,8 @@
+name: fp-jira-get
+method: GET
+path: ['/','/secure/Dashboard.jspa']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "jira.webresources" in r.content.decode() or "atlassian.xsrf.token" in str(r.headers) or "ams-build-number" in r.content.decode() or "com.atlassian.plugins" in r.content.decode()

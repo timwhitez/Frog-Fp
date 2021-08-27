@@ -1,0 +1,8 @@
+name: fp-laravel-webdir-get
+method: GET
+path: ['/storage/logs/laravel.log']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code==200 and ('plain' in r.content.decode() or 'octet-stream' in r.content.decode()) and 'Stack trace' in r.content.decode() and 'framework' in r.content.decode() and 'vendor' in r.content.decode()

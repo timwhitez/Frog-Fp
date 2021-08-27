@@ -1,0 +1,8 @@
+name: fp-fastadmin-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      "https://www.fastadmin.net" in r.content.decode() or 'FastAdmin</a>' in r.content.decode() or '<title>FastAdmin' in r.content.decode()

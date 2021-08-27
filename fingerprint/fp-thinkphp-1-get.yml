@@ -1,0 +1,8 @@
+name: fp-thinkphp-1-get
+method: GET
+path: ["/robots.txt"]
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code == 200 and 'thinkphp' in r.content.decode().lower()

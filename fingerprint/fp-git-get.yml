@@ -1,0 +1,8 @@
+name: fp-git-get
+method: GET
+path: ["/.git/config"]
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code == 200 and '[core]' in r.content.decode()

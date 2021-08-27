@@ -1,0 +1,8 @@
+name: fp-FineReport-get
+method: GET
+path: ["/","/ReportServer","/report/ReportServer","/seeyonreport/ReportServer","/WebReport/ReportServer"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'FineReport,Web Reporting Tool' in r.content.decode()

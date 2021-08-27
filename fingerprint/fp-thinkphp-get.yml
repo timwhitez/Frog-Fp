@@ -1,0 +1,8 @@
+name: fp-thinkphp-get
+method: GET
+path: ["/"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'X-Powered-By: ThinkPHP' in str(r.headers) or 'think_template' in str(r.headers).lower() or 'think_language' in str(r.headers).lower()

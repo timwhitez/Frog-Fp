@@ -1,0 +1,8 @@
+name: fp-flink-get
+method: GET
+path: ["/"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Apache Flink Web Dashboard</title>' in r.content.decode() or '<style>flink-job-list' in r.content.decode() or 'assets/images/flink.svg' in r.content.decode() or 'Apache Flink Dashboard</h1>' in r.content.decode()

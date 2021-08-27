@@ -1,0 +1,8 @@
+name: fp-ActiveMQ-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Apache ActiveMQ</title>' in r.content.decode() or 'activemq_logo' in r.content.decode() or '<a title="Manage ActiveMQ broker" href="/admin/">Manage ActiveMQ broker</a>' in r.content.decode()

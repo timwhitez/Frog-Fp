@@ -1,0 +1,8 @@
+name: fp-KubeSphere-get
+method: GET
+path: ['/','/login']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>KubeSphere</title>' in r.content.decode()

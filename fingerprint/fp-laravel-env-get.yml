@@ -1,0 +1,8 @@
+name: fp-laravel-env-get
+method: GET
+path: ['/.env']
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      r.status_code==200 and 'APP_NAME' in r.content.decode() and 'APP_ENV' in r.content.decode() and 'APP_KEY' in r.content.decode() and 'APP_URL' in r.content.decode()

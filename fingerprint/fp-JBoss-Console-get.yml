@@ -1,0 +1,8 @@
+name: fp-JBoss-Console-get
+method: GET
+path: ['/','/console','/jmx-console','/admin-console','/jbossws']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Welcome to JBoss' in r.content.decode() or '<title>JBoss' in r.content.decode() or 'JBoss™ Management Console' in r.content.decode() or 'JBoss AS Administration Console' in r.content.decode()

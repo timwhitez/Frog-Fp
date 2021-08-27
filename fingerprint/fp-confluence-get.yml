@@ -1,0 +1,8 @@
+name: fp-confluence-get
+method: GET
+path: ['/','/login.action']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'x-confluence' in str(r.headers) or 'X-Confluence' in str(r.headers) or '<meta id="confluence' in r.content.decode() or '<meta name="confluence' in r.content.decode() or 'href="/opensearch/osd.action" title="Confluence">' in r.content.decode() or 'Confluence</title>' in r.content.decode()

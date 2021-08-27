@@ -1,0 +1,8 @@
+name: fp-Canal-Admin-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Canal Admin</title>' in r.content.decode() or 'Canal Admin Login</h3>' in r.content.decode()

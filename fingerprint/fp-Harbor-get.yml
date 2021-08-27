@@ -1,0 +1,8 @@
+name: fp-Harbor-get
+method: GET
+path: ['/','/harbor/sign-in']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>Harbor</title>' in r.content.decode() or ('images/harbor-' in r.content.decode() and 'harbor-logo' in r.content.decode()) or 'class="title">Harbor</span>' in r.content.decode()

@@ -1,0 +1,11 @@
+name: fp-phpmyadmin-get
+method: GET
+path: ["/pma/index.php","/phpmyadmin/index.php","/PhpMyAdmin/index.php"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      '<title>phpMyAdmin</title>' in r.content.decode()
+
+
+

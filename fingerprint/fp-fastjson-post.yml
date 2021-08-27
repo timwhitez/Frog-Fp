@@ -1,0 +1,9 @@
+name: fp-fastjson-post
+method: POST
+path: ["/"]
+Header: {"Content-Type": "application/json"}
+Cookie: ""
+data: '{"'
+follow_redirects: False
+expression: |
+      'fastjson' in r.content.decode()

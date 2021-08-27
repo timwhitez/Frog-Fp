@@ -1,0 +1,8 @@
+name: fp-tomcat-get
+method: GET
+path: ['/']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code == 200 and ('<h1>Apache Tomcat' in r.content.decode() or '<title>Apache Tomcat' in r.content.decode())

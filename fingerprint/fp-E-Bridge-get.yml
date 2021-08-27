@@ -1,0 +1,8 @@
+name: fp-E-Bridge-get
+method: GET
+path: ["/","/login"]
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      r.status_code==200 and 'http://wx.weaver.com.cn' in r.content.decode()

@@ -1,0 +1,8 @@
+name: fp-sonicwall-vpn-get
+method: GET
+path: ['/','/cgi-bin/welcome','/spog/welcome']
+Header: ""
+Cookie: ""
+follow_redirects: True
+expression: |
+      'SonicWALL' in str(r.headers)
