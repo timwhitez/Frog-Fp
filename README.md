@@ -45,11 +45,7 @@ web端口发现使用[c26root/hb](https://github.com/c26root/hb), 爬虫使用[c
 
 尤其是在手上有了一部分0day后，深度的指纹识别能提升"以漏洞找资产的能力"。
 
-此框架的构思基于个人的一部分打点经验，有很多不足之处，开源是希望大家一起完善起来。
-
-对于我个人来说，不太想公开指纹库，这会增加被waf拦截的可能性
-
-但如果您能对本项目进行核心代码贡献/修复被认可，或是可以贡献超过5个有效指纹yaml并且提供对应漏洞详情，即可共享目前的指纹库。
+此框架的构思基于个人的一部分打点经验，有很多不足之处。
 
 ## Usage
 若在linux下使用，请给 rad_linux/ffuf_linux/hb_linux三个文件可执行权限
@@ -167,10 +163,6 @@ deep_crawl = False
 
 ## 🚀Star Trend
 [![Stargazers over time](https://starchart.cc/timwhitez/Frog-Fp.svg)](https://starchart.cc/timwhitez/Frog-Fp)
-
-## 指纹库check截图
-
-![image1](https://raw.githubusercontent.com/timwhitez/Frog-Fp/main/check.png)
 
 
 ## etc
