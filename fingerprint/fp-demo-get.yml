@@ -1,8 +1,0 @@
-name: fp-demo-get
-method: GET
-path: ["/","/login"]
-Header: {"Accept-Language":"zh-CN", "Content-Type": "text/javascript"}
-Cookie: key1=value1;key2=value2
-follow_redirects: True
-expression: |
-      r.status_code == 200 and ('test' in str(r.headers) or 'test1' in r.content.decode())
