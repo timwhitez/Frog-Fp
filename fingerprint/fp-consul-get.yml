@@ -1,0 +1,8 @@
+name: fp-consul-get
+method: GET
+path: ["/v1/agent/self"]
+Header: ""
+Cookie: ""
+follow_redirects: False
+expression: |
+      '"Datacenter":' in r.content.decode() and '"Revision":' in r.content.decode() and '"PrimaryDatacenter"' in r.content.decode()
